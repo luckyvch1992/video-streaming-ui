@@ -20,18 +20,27 @@
     </ul>
   </div>
 </nav>
-<div class="container my-5">
-  <h1 class="mb-3">Media files</h1>
-  <div class="row">
-    <div class="col-md-4 mb-4" *ngFor="let video of mediaFiles">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">{{ video.fileName }}</h5>
-<!--          <a href="#" class="btn btn-primary" (click)="viewVideo(video)">View Video</a>-->
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="container">
+  <h1>Video List</h1>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>Id</th>
+      <th>File Name</th>
+      <th>Mime Type</th>
+      <th>File Size</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let file of mediaFiles">
+      <td>{{file.id}}</td>
+      <td>{{file.fileName}}</td>
+      <td>{{file.mimeType}}</td>
+      <td>{{file.fileSize}}</td>
+<!--      <td><a routerLink="/view/{{file.id}}">View</a></td>-->
+    </tr>
+    </tbody>
+  </table>
 </div>
 <router-outlet></router-outlet>
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
